@@ -1,0 +1,90 @@
+
+                     Defpub TITLE
+
+A defensive publication about FEATURE/PROJECT: DESCRIPTION (2-3
+lines)
+
+Tags: TAGS
+
+* * * * * * * * * * * * * * * * *
+
+More info:
+
+ - about the PROJECT: URL
+ - about Defensive Publications:
+   <http://defensivepublications.org/>
+ - IRC: irc.freenode.net #linuxdefenders
+
+
+Get Started
+===========
+
+To start with your defensive publication, have a look in the
+`example/` directory for other defensive publications example and
+for the template documents. Then, go write in the `src/`
+directory.
+
+You can find examples of defensive publications along with
+guidelines at:
+<http://www.defensivepublications.org/defensive-pubs-examples>
+
+
+Build instructions
+==================
+
+Dependencies: 
+
+  - [pandoc] 
+  - LaTeX with XeTeX support
+  - [pandoc]-citeproc (recommended)
+
+You can write your defensive publication in any format handled by
+[pandoc] such as Markdown, reStructuredText, Mediawiki, Org-mode,
+OPML. Please put them in the `src/` directory. More information
+can be found about that in the `src/README`.
+
+To build the PDF
+
+1. Translate the defensive publication source files to LaTeX, for
+   example:
+
+    pandoc src/intro.md src/main.md src/appendix.md -o defpubTitle.tex --template src/template.tex --standalone
+
+You can also define variables and more options of the `pandoc`
+command above. 
+
+If you include complex figures:
+    
+    --variable complex-figures
+
+If you also want to produce a bibliography, we recommend using
+pandoc-citeproc with a `src/references.yaml` file, then you need
+to include in the `pandoc` command:
+
+    --filter pandoc-citeproc src/references.yaml
+
+[pandoc]: http://johnmacfarlane.net/pandoc/README.html
+
+
+2. Process the file to PDF
+
+    xelatex defpubTitle.tex
+
+
+Todo list
+=========
+ 
+ - make a script to set up variables such as
+    - TITLE
+    - PROJECT
+    - URL
+    - FEATURE (optional)
+    - DESCRIPTION
+    - TAGS
+    - source-file
+
+ - make a script to build
+    - markdown to tex files (if any)
+    - svg to eps
+    - master latex file
+

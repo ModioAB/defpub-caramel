@@ -1,0 +1,9 @@
+src/*.*.tex
+src/*.*.eps
+example/example1.png
+example/example2.png
+example/template.md.*
+example/template.aux
+example/template.log
+example/template.out
+example/template.tex

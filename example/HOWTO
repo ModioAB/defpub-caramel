@@ -1,0 +1,74 @@
+# General Template
+
+The README should be a good starting point to see what
+parts a defensive publication needs.
+
+# Metadata
+
+You can create a separate file for metadata of the defensive
+publication, like:
+
+    ../example/abstract.yaml
+
+This file contains an abstract and keywords. More information on
+how to use it with pandoc, see
+<http://johnmacfarlane.net/pandoc/README.html#extension-yaml_metadata_block>
+
+
+Metadata can also be used for bibliography using pandoc's
+citeproc, see an example at:
+
+    ../example/references.yaml
+
+For more information to use the bibliography, see
+<http://johnmacfarlane.net/pandoc/README.html#citations>
+
+# Figures
+
+You can include figures directly in the body of the defensive
+publication, but you can also group them together at the end in
+a single latex file such as
+
+    ../example/figures.tex
+
+## Flowcharts
+
+### Using LaTeX TikZ
+
+The TikZ package can be used to create flowcharts. An example can
+be found at:
+
+    ../example/flowchart.tex
+
+More resources for TikZ on <http://www.texample.net/tikz/>
+
+
+### Using Xfig
+
+Xfig can also be used to create flowcharts. An example can be
+found at:
+
+    ../example/flowchart.fig
+
+
+## Scalable figures
+
+TODO
+
+Inkscape tempaltes other Xfig templates?
+
+## Convert figures to .eps
+
+Before building the PDF, remember to convert figures to
+encapsulated postscript files (.eps) so that LaTeX can make use of
+them.
+
+Xfig figures need to be converted for LaTeX. You should install
+the transfig program. The [fig2eps] script can also be useful to
+generate encapsulated postscript (.eps) easily.
+
+[fig2eps]: https://sites.google.com/a/courville.org/courville/home/fig2eps
+
+For SVG, inkscape can export to EPS.
+
+
